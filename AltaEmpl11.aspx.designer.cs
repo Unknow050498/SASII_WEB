@@ -11,7 +11,7 @@ namespace MVP_ASP
 {
 
 
-    public partial class WebForm2
+    public partial class AltaEmpl11
     {
 
         /// <summary>

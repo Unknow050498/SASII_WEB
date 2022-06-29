@@ -23,9 +23,7 @@ namespace MVP_ASP
         Response response = new Response();
 
         protected override void InicializaControles()
-        {
-            
-            {
+        {                  
                 adm_button.Enabled = false;
                 usr_button.Enabled = false;
                 path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Folios";
@@ -99,7 +97,6 @@ namespace MVP_ASP
                 */
                 adm_button.Enabled = true;
                 usr_button.Enabled = true;
-            }
 
         }
 
@@ -115,7 +112,6 @@ namespace MVP_ASP
 
         protected override Response EjecutaProceso()
         {
-        
             return null;
         }
 

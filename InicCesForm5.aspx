@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="InicCesForm5.aspx.cs" Inherits="MVP_ASP.WebForm3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="InicCesForm5.aspx.cs" Inherits="MVP_ASP.InicCesForm5" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <table  id="tblMain" class="main" >
 	<tbody><tr>

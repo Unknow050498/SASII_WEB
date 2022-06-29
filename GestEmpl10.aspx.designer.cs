@@ -11,7 +11,7 @@ namespace MVP_ASP
 {
 
 
-    public partial class WebForm8
+    public partial class GestEmpl10
     {
 
         /// <summary>

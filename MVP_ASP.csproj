@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AltaAdm.aspx" />
     <Content Include="App_LocalResources\add.png" />
     <Content Include="App_LocalResources\add1.png" />
     <Content Include="App_LocalResources\add2.png" />
@@ -164,7 +165,6 @@
     <Content Include="AgreProv.aspx" />
     <Content Include="Precio.aspx" />
     <Content Include="Alertas.aspx" />
-    <Content Include="AltaAdm.aspx" />
     <Content Include="GestEmpl10.aspx" />
     <Content Include="Inventario6.aspx" />
     <Content Include="FormUsuario.aspx" />
@@ -206,6 +206,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaAdm.aspx.cs">
+      <DependentUpon>AltaAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaAdm.aspx.designer.cs">
+      <DependentUpon>AltaAdm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\Constantes.cs" />
     <Compile Include="App_Code\DTO\DTO.cs" />
     <Compile Include="App_Code\DTO\DTOEmpleado.cs" />
@@ -324,13 +331,6 @@
     </Compile>
     <Compile Include="Alertas.aspx.designer.cs">
       <DependentUpon>Alertas.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AltaAdm.aspx.cs">
-      <DependentUpon>AltaAdm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AltaAdm.aspx.designer.cs">
-      <DependentUpon>AltaAdm.aspx</DependentUpon>
     </Compile>
     <Compile Include="GestEmpl10.aspx.cs">
       <DependentUpon>GestEmpl10.aspx</DependentUpon>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AltaEmpl11.aspx.cs" Inherits="MVP_ASP.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AltaEmpl11.aspx.cs" Inherits="MVP_ASP.AltaEmpl11" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <table  id="tblMain" class="main" >
 		<tbody><tr>

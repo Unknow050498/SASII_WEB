@@ -21,8 +21,7 @@
                             </tr>
                             <tr>
                                 <td class="alignlabel">Field 2:
-                                    <asp:RadioButton ID="RadioButton1" runat="server" />
-                                </td>
+                                    </td>
                                 <td>
                                     <asp:TextBox ID="textBox2" runat="server" MaxLength="10" CssClass="form-control"></asp:TextBox>
                                 </td>

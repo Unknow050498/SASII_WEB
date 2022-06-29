@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SDLX.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,15 @@ namespace MVP_ASP
 {
     public partial class AgreProv : Vista 
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected override void InicializaControles()
         {
-
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+        }
+        protected override Response EjecutaProceso()
+        {
+            Response response = new Response();
         }
     }
 }

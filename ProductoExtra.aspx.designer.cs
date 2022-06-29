@@ -11,7 +11,7 @@ namespace MVP_ASP
 {
 
 
-    public partial class WebForm12
+    public partial class ProductoExtra
     {
 
         /// <summary>

@@ -11,7 +11,7 @@ namespace MVP_ASP
 {
 
 
-    public partial class WebForm11
+    public partial class InfProv
     {
 
         /// <summary>

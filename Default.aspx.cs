@@ -7,11 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace MVP_ASP
 {
-    public partial class _Default : Page
+    public partial class _Default : Vista
+        protected override void InicializaControles()
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
     }
+    protected override Response EjecutaProceso()
+    {
+    }
+}
 }

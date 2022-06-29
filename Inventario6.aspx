@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Inventario6.aspx.cs" Inherits="MVP_ASP.WebForm9" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Inventario6.aspx.cs" Inherits="MVP_ASP.Inventario6" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
  <table  id="tblMain" class="main" >
 		<tbody><tr>

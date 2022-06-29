@@ -11,7 +11,7 @@ namespace MVP_ASP
 {
 
 
-    public partial class WebForm10
+    public partial class FormUsuario
     {
 
         /// <summary>

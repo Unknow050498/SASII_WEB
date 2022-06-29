@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AgreProv.aspx.cs" Inherits="MVP_ASP.WebForm4" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AgreProv.aspx.cs" Inherits="MVP_ASP.AgreProv" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
        <table  id="tblMain" class="main" >
 		<tbody><tr>

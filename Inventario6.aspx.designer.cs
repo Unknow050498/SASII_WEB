@@ -11,7 +11,7 @@ namespace MVP_ASP
 {
 
 
-    public partial class WebForm9
+    public partial class Inventario6
     {
 
         /// <summary>

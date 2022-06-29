@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Alertas.aspx.cs" Inherits="MVP_ASP.WebForm6" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Alertas.aspx.cs" Inherits="MVP_ASP.Alertas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
            <table  id="tblMain" class="main" >
 		<tbody><tr>
