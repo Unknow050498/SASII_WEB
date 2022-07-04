@@ -32,50 +32,50 @@ namespace MVP_ASP
                     Directory.CreateDirectory(path);
                 }
 
-                /*if (!File.Exists(Path.GetFullPath("INV.sqlite")))
+                if (!File.Exists(Path.GetFullPath("INV.Sql")))
                 {
-                    using (SQLiteConnection connectINV = new SQLiteConnection("Data source=" + Path.GetFullPath("INV.sqlite") + ";Version=3;"))
+                    using (SqlConnection connectINV = new SqlConnection("Data source=" + Path.GetFullPath("INV.Sql") + ";Version=3;"))
                     {
                         connectINV.Open();
-                        using (SQLiteCommand cmd = new SQLiteCommand("CREATE TABLE contras (con_admin TEXT, con_mast TEXT)", connectINV))
+                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE contras (con_admin TEXT, con_mast TEXT)", connectINV))
                         {
                             cmd.ExecuteNonQuery();
                         }
-                        using (SQLiteCommand cmd = new SQLiteCommand("CREATE TABLE direccion (dirLocal TEXT, correo TEXT)", connectINV))
+                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE direccion (dirLocal TEXT, correo TEXT)", connectINV))
                         {
                             cmd.ExecuteNonQuery();
                         }
-                        using (SQLiteCommand cmd = new SQLiteCommand("CREATE TABLE audit (fecha TEXT, hora TEXT, operacion TEXT, cambioRealizado TEXT)", connectINV))
+                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE audit (fecha TEXT, hora TEXT, operacion TEXT, cambioRealizado TEXT)", connectINV))
                         {
                             cmd.ExecuteNonQuery();
                         }
-                        using (SQLiteCommand cmd = new SQLiteCommand("CREATE TABLE provedores (clave TEXT, provedor TEXT, correo TEXT, telefono TEXT)", connectINV))
+                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE provedores (clave TEXT, provedor TEXT, correo TEXT, telefono TEXT)", connectINV))
                         {
                             cmd.ExecuteNonQuery();
                         }
-                        using (SQLiteCommand cmd = new SQLiteCommand("CREATE TABLE folios (ID INTEGER, noFolio TEXT)", connectINV))
+                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE folios (ID INTEGER, noFolio TEXT)", connectINV))
                         {
                             cmd.ExecuteNonQuery();
                         }
-                        using (SQLiteCommand cmd = new SQLiteCommand("CREATE TABLE inventario (clave TEXT, producto TEXT, presentacion TEXT, precio REAL, costo REAL, montounit REAL, cantidad INTEGER, limite_inferior INTEGER, iva REAL)", connectINV))
+                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE inventario (clave TEXT, producto TEXT, presentacion TEXT, precio REAL, costo REAL, montounit REAL, cantidad INTEGER, limite_inferior INTEGER, iva REAL)", connectINV))
                         {
                             cmd.ExecuteNonQuery();
                         }
-                        using (SQLiteCommand cmd = new SQLiteCommand("CREATE TABLE ventas (vendedor TEXT, folioAsociado TEXT)", connectINV))
+                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE ventas (vendedor TEXT, folioAsociado TEXT)", connectINV))
                         {
                             cmd.ExecuteNonQuery();
                         }
-                        using (SQLiteCommand cmd = new SQLiteCommand("CREATE TABLE vendedores (claveVendedor TEXT, nombre TEXT, ventas INTEGER, puesto TEXT, salario TEXT)", connectINV))
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
-
-                        using (SQLiteCommand cmd = new SQLiteCommand("CREATE TABLE proveedores (clave TEXT, proveedor TEXT, tel INTEGER, correo TEXT)", connectINV))
+                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE vendedores (claveVendedor TEXT, nombre TEXT, ventas INTEGER, puesto TEXT, salario TEXT)", connectINV))
                         {
                             cmd.ExecuteNonQuery();
                         }
 
-                        using (SQLiteCommand cmd = new SQLiteCommand("INSERT INTO contras (con_admin, con_mast) VALUES (@conAdmin, @conMaestra)", connectINV))
+                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE proveedores (clave TEXT, proveedor TEXT, tel INTEGER, correo TEXT)", connectINV))
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        using (SqlCommand cmd = new SqlCommand("INSERT INTO contras (con_admin, con_mast) VALUES (@conAdmin, @conMaestra)", connectINV))
                         {
                             cmd.Parameters.Add("@conAdmin", DbType.AnsiString).Value = "0";
                             byte[] tmpSource;
@@ -85,16 +85,16 @@ namespace MVP_ASP
                             cmd.Parameters.Add("@conMaestra", DbType.AnsiString).Value = BitConverter.ToString(tmpHash).Replace("-", "");
                             cmd.ExecuteNonQuery();
                         }
-                        using (SQLiteCommand cmd = new SQLiteCommand("INSERT INTO folios (ID, noFolio) VALUES (@id, @folio)", connectINV))
+                        using (SqlCommand cmd = new SqlCommand("INSERT INTO folios (ID, noFolio) VALUES (@id, @folio)", connectINV))
                         {
                             cmd.Parameters.Add("@id", DbType.Int32).Value = 1;
                             cmd.Parameters.Add("@folio", DbType.AnsiString).Value = "A000000";
                             cmd.ExecuteNonQuery();
                         }
                     }
-                    SQLiteConnection.ClearAllPools();
+                    SqlConnection.ClearAllPools();
                 }
-                */
+                
                 adm_button.Enabled = true;
                 usr_button.Enabled = true;
 
