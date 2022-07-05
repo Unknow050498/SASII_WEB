@@ -1,15 +1,15 @@
 ﻿using SDLX.DTO;
 using SDLX.Utilerias;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
-using System.Web;
 using System.Web.Configuration;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+
 
 namespace MVP_ASP
 {
@@ -26,6 +26,7 @@ namespace MVP_ASP
         {                  
                 adm_button.Enabled = false;
                 usr_button.Enabled = false;
+
                 path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Folios";
                 if (!Directory.Exists(path))
                 {
@@ -77,18 +78,18 @@ namespace MVP_ASP
 
                         using (SqlCommand cmd = new SqlCommand("INSERT INTO contras (con_admin, con_mast) VALUES (@conAdmin, @conMaestra)", connectINV))
                         {
-                            cmd.Parameters.Add("@conAdmin", DbType.AnsiString).Value = "0";
+                            cmd.Parameters.Add("@conAdmin", (SqlDbType)DbType.AnsiString).Value = "0";
                             byte[] tmpSource;
                             byte[] tmpHash;
                             tmpSource = ASCIIEncoding.ASCII.GetBytes("S3DL4X4R?¿DSNPr0?");
                             tmpHash = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
-                            cmd.Parameters.Add("@conMaestra", DbType.AnsiString).Value = BitConverter.ToString(tmpHash).Replace("-", "");
+                            cmd.Parameters.Add("@conMaestra", (SqlDbType)DbType.AnsiString).Value = BitConverter.ToString(tmpHash).Replace("-", "");
                             cmd.ExecuteNonQuery();
                         }
                         using (SqlCommand cmd = new SqlCommand("INSERT INTO folios (ID, noFolio) VALUES (@id, @folio)", connectINV))
                         {
-                            cmd.Parameters.Add("@id", DbType.Int32).Value = 1;
-                            cmd.Parameters.Add("@folio", DbType.AnsiString).Value = "A000000";
+                            cmd.Parameters.Add("@id", (SqlDbType)DbType.Int32).Value = 1;
+                            cmd.Parameters.Add("@folio", (SqlDbType)DbType.AnsiString).Value = "A000000";
                             cmd.ExecuteNonQuery();
                         }
                     }
