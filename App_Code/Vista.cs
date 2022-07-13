@@ -1,6 +1,6 @@
-﻿using System;
+﻿using SDLX.DTO;
 using SDLX.Utilerias;
-using SDLX.DTO;
+using System;
 
 public abstract partial class Vista : System.Web.UI.Page
 {
@@ -31,12 +31,13 @@ public abstract partial class Vista : System.Web.UI.Page
                     ProcesaRespuesta(respuesta);
                     if (respuesta.msg != null)
                     {
-                        Utilerias.RegisterStartupScriptAlert(Page, respuesta.msg );
+                        Utilerias.RegisterStartupScriptAlert(Page, respuesta.msg);
                     }
                 }
             }
 
-        } catch (Exception ex)
+        }
+        catch (Exception ex)
         {
             reportFail(ex);
         }

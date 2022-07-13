@@ -15,17 +15,7 @@ namespace MVP_ASP
         }
         protected override Response EjecutaProceso()
         {
-            Response response = new Response();
-        }
-
-        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void RadioButtonList2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            return null;
         }
     }
 }
