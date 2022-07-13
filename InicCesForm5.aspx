@@ -14,8 +14,8 @@
 						<asp:Button ID="btnAceptar" runat="server"  OnClick="btnAceptar_Click"  OnClientClick="OpenPopUpWorking(true);" ValidationGroup="aceptar" Text="Iniciar Sesion" CssClass="btn btn-primary" />
 				</tr><tr>
 					<td colspan="2"class="alignlabel">	
-					<asp:LinkButton ID="LinkButton1" runat="server">Restablecer Contraseña</asp:LinkButton>
-					<asp:LinkButton ID="LinkButton2" runat="server">Olvidaste Contraseña</asp:LinkButton>
+					<asp:LinkButton ID="LinkResPsswd" runat="server" OnClick="LinkResPsswd_Click">Restablecer Contraseña</asp:LinkButton>
+					<asp:LinkButton ID="LinkForgPsswd" runat="server">Olvidaste Contraseña</asp:LinkButton>
 					</td>
 				</tr> 
 		</tbody></table></td>

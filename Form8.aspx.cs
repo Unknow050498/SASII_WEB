@@ -1,15 +1,11 @@
 ﻿using SDLX.DTO;
 using SDLX.Utilerias;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using MySql.Data.MySqlClient;
 
 namespace MVP_ASP
 {
@@ -22,15 +18,16 @@ namespace MVP_ASP
 
         protected override Response EjecutaProceso()
         {
+
             Response response = new Response();
             string conAdminTxt = "", conAdminTxtBox;
-            using (SqlConnection conex = new SqlConnection(ConfigurationManager.ConnectionStrings["Sedlaxar"].ConnectionString))
+            using (MySqlConnection conex = new MySqlConnection(ConfigurationManager.ConnectionStrings["Sedlaxar"].ConnectionString))
 
             {
                 conex.Open();
-                using (SqlCommand cmd = new SqlCommand("SELECT con_admin FROM contras", conex))
+                using (MySqlCommand cmd = new MySqlCommand("SELECT con_admin FROM contras", conex))
                 {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {

@@ -5,10 +5,11 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Web.Configuration;
 using System.Security.Cryptography;
 using System.Text;
+using System.Web.Configuration;
 using System.Web.UI;
+using MySql.Data.MySqlClient;
 
 
 namespace MVP_ASP
@@ -23,81 +24,80 @@ namespace MVP_ASP
         Response response = new Response();
 
         protected override void InicializaControles()
-        {                  
-                adm_button.Enabled = false;
-                usr_button.Enabled = false;
+        {
+            adm_button.Enabled = false;
+            usr_button.Enabled = false;
 
-                path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Folios";
-                if (!Directory.Exists(path))
-                {
-                    Directory.CreateDirectory(path);
-                }
+            path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Folios";
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
 
-                if (!File.Exists(Path.GetFullPath("INV.Sql")))
+            string connection = "Server=localhost;UserID=root;Database=Sedlaxar;Password=root;";
+
+            using (MySqlConnection connectINV = new MySqlConnection(connection))
                 {
-                    using (SqlConnection connectINV = new SqlConnection("Data source=" + Path.GetFullPath("INV.Sql") + ";Version=3;"))
+                    connectINV.Open();
+                    using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE contras (con_admin TEXT, con_mast TEXT)", connectINV))
                     {
-                        connectINV.Open();
-                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE contras (con_admin TEXT, con_mast TEXT)", connectINV))
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
-                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE direccion (dirLocal TEXT, correo TEXT)", connectINV))
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
-                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE audit (fecha TEXT, hora TEXT, operacion TEXT, cambioRealizado TEXT)", connectINV))
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
-                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE provedores (clave TEXT, provedor TEXT, correo TEXT, telefono TEXT)", connectINV))
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
-                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE folios (ID INTEGER, noFolio TEXT)", connectINV))
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
-                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE inventario (clave TEXT, producto TEXT, presentacion TEXT, precio REAL, costo REAL, montounit REAL, cantidad INTEGER, limite_inferior INTEGER, iva REAL)", connectINV))
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
-                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE ventas (vendedor TEXT, folioAsociado TEXT)", connectINV))
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
-                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE vendedores (claveVendedor TEXT, nombre TEXT, ventas INTEGER, puesto TEXT, salario TEXT)", connectINV))
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
-
-                        using (SqlCommand cmd = new SqlCommand("CREATE TABLE proveedores (clave TEXT, proveedor TEXT, tel INTEGER, correo TEXT)", connectINV))
-                        {
-                            cmd.ExecuteNonQuery();
-                        }
-
-                        using (SqlCommand cmd = new SqlCommand("INSERT INTO contras (con_admin, con_mast) VALUES (@conAdmin, @conMaestra)", connectINV))
-                        {
-                            cmd.Parameters.Add("@conAdmin", (SqlDbType)DbType.AnsiString).Value = "0";
-                            byte[] tmpSource;
-                            byte[] tmpHash;
-                            tmpSource = ASCIIEncoding.ASCII.GetBytes("S3DL4X4R?¿DSNPr0?");
-                            tmpHash = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
-                            cmd.Parameters.Add("@conMaestra", (SqlDbType)DbType.AnsiString).Value = BitConverter.ToString(tmpHash).Replace("-", "");
-                            cmd.ExecuteNonQuery();
-                        }
-                        using (SqlCommand cmd = new SqlCommand("INSERT INTO folios (ID, noFolio) VALUES (@id, @folio)", connectINV))
-                        {
-                            cmd.Parameters.Add("@id", (SqlDbType)DbType.Int32).Value = 1;
-                            cmd.Parameters.Add("@folio", (SqlDbType)DbType.AnsiString).Value = "A000000";
-                            cmd.ExecuteNonQuery();
-                        }
+                        cmd.BeginExecuteNonQuery();
                     }
-                    SqlConnection.ClearAllPools();
+                    using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE direccion (dirLocal TEXT, correo TEXT)", connectINV))
+                    {
+                        cmd.BeginExecuteNonQuery();
+                    }
+                    using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE audit (fecha TEXT, hora TEXT, operacion TEXT, cambioRealizado TEXT)", connectINV))
+                    {
+                        cmd.BeginExecuteNonQuery();
+                    }
+                    using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE provedores (clave TEXT, provedor TEXT, correo TEXT, telefono TEXT)", connectINV))
+                    {
+                        cmd.BeginExecuteNonQuery();
+                    }
+                    using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE folios (ID INTEGER, noFolio TEXT)", connectINV))
+                    {
+                        cmd.BeginExecuteNonQuery();
+                    }
+                    using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE inventario (clave TEXT, producto TEXT, presentacion TEXT, precio REAL, costo REAL, montounit REAL, cantidad INTEGER, limite_inferior INTEGER, iva REAL)", connectINV))
+                    {
+                        cmd.BeginExecuteNonQuery();
+                    }
+                    using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE ventas (vendedor TEXT, folioAsociado TEXT)", connectINV))
+                    {
+                        cmd.BeginExecuteNonQuery();
+                    }
+                    using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE vendedores (claveVendedor TEXT, nombre TEXT, ventas INTEGER, puesto TEXT, salario TEXT)", connectINV))
+                    {
+                        cmd.BeginExecuteNonQuery();
+                    }
+
+                    using (MySqlCommand cmd = new MySqlCommand("CREATE TABLE proveedores (clave TEXT, proveedor TEXT, tel INTEGER, correo TEXT)", connectINV))
+                    {
+                        cmd.BeginExecuteNonQuery();
+                    }
+
+                    using (MySqlCommand cmd = new MySqlCommand("INSERT INTO contras (con_admin, con_mast) VALUES (@conAdmin, @conMaestra)", connectINV))
+                    {
+                        cmd.Parameters.AddWithValue("@conAdmin", (MySqlDbType)DbType.AnsiString).Value = "0";
+                        byte[] tmpSource;
+                        byte[] tmpHash;
+                        tmpSource = ASCIIEncoding.ASCII.GetBytes("S3DL4X4R?¿DSNPr0?");
+                        tmpHash = new MD5CryptoServiceProvider().ComputeHash(tmpSource);
+                        cmd.Parameters.AddWithValue("@conMaestra", (MySqlDbType)DbType.AnsiString).Value = BitConverter.ToString(tmpHash).Replace("-", "");
+                        cmd.BeginExecuteNonQuery();
+                    }
+                    using (MySqlCommand cmd = new MySqlCommand("INSERT INTO folios (ID, noFolio) VALUES (@id, @folio)", connectINV))
+                    {
+                        cmd.Parameters.AddWithValue("@id", (MySqlDbType)DbType.Int32).Value = 1;
+                        cmd.Parameters.AddWithValue("@folio", (MySqlDbType)DbType.AnsiString).Value = "A000000";
+                        cmd.BeginExecuteNonQuery();
+                    }
                 }
-                
-                adm_button.Enabled = true;
-                usr_button.Enabled = true;
+                MySqlConnection.ClearAllPools();
+     
+            adm_button.Enabled = true;
+            usr_button.Enabled = true;
 
         }
 
@@ -107,6 +107,7 @@ namespace MVP_ASP
             Utilerias.RegisterStartupScriptAlert(Page, "Redirect to Form XXXXXX");
             //Response.Redirect(WebConfigurationManager.AppSettings["pageAltaAdm"]);
             response.msg = "OK";
+
             adm_button.Enabled = false;
             usr_button.Enabled = false;
         }
@@ -118,12 +119,12 @@ namespace MVP_ASP
 
         protected void adm_button_Click(object sender, ImageClickEventArgs e)
         {
-            using (SqlConnection conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["Sedlaxar"].ConnectionString))
+            using (MySqlConnection conexion = new MySqlConnection(ConfigurationManager.ConnectionStrings["Sedlaxar"].ConnectionString))
             {
                 conexion.Open();
-                using (SqlCommand cmd = new SqlCommand("Select con_admin from contras", conexion))
+                using (MySqlCommand cmd = new MySqlCommand("Select con_admin from contras", conexion))
                 {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
@@ -139,14 +140,16 @@ namespace MVP_ASP
                     }
                 }
             }
-            SqlConnection.ClearAllPools();
+
+            MySqlConnection.ClearAllPools();
+
             if (primeraVez)
             {
                 //RFD-redirect --> alta_adm guardarContra = new alta_adm();
                 //guardarContra.Show();
                 Utilerias.RegisterStartupScriptAlert(Page, "Mandar flujo alta_adm");
                 Response.Redirect(WebConfigurationManager.AppSettings["pageAltaAdm"]);
-                
+
             }
             else
             {

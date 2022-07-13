@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using SDLX.DTO;
+using System;
+using System.Data.SqlClient;
+using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
-using SDLX.DTO;
-using System.IO;
 using System.Web.Configuration;
-using System.IO.Compression;
-using System.Data.SqlClient;
 
 /// <summary>
 /// Summary description for Utilerias
@@ -84,8 +81,8 @@ namespace SDLX.Utilerias
             }
             return (sb.ToString().Normalize(NormalizationForm.FormC));
         }
-        
-        
+
+
 
         public static string RawUrlAplicativa(HttpRequest request)
         {
@@ -99,7 +96,7 @@ namespace SDLX.Utilerias
                 System.Diagnostics.EventLog.CreateEventSource(WebConfigurationManager.AppSettings["application"], "Application");
             System.Diagnostics.EventLog.WriteEntry(WebConfigurationManager.AppSettings["application"], msg, eventLogEntry, number);
         }
-        public static void RegisterStartupScriptAlert (System.Web.UI.Page Page, string message)
+        public static void RegisterStartupScriptAlert(System.Web.UI.Page Page, string message)
         {
             //string msgDepurado = System.Text.RegularExpressions.Regex.Replace(message, @"[^\w\.@()-]", " ");
             string msgDepurado = System.Text.RegularExpressions.Regex.Replace(message, @"[^\w\.\:\-,@$()-]", " "); // \w - aceptar alfanuméricos y guión bajo \. acepta punto \: acepta :, etc
@@ -107,7 +104,7 @@ namespace SDLX.Utilerias
         }
 
 
-        
+
         public static void ActivarCreditoTablas(bool activar, string numCredito, string[] tablasAfectadas, SqlTransaction sqlTransaction, SqlConnection sqlConnection)
         {
             string sqlExclude;
@@ -117,7 +114,8 @@ namespace SDLX.Utilerias
                 if (activar == false && tabla.Trim().ToUpper() == "CREDITO_BLOQUE_COMPROBANTE")
                 {
                     sqlExclude = " AND Cve_Pago IS NULL";
-                } else
+                }
+                else
                 {
                     sqlExclude = "";
                 }
@@ -134,8 +132,8 @@ namespace SDLX.Utilerias
                 }
             }
         }
-    
-        public static object initParameterDatabase (object parameter)
+
+        public static object initParameterDatabase(object parameter)
         {
             return parameter == null || parameter.ToString().Trim() == "" ? DBNull.Value : (object)parameter;
         }

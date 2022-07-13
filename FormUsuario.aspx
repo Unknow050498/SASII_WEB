@@ -13,10 +13,7 @@
                                 <td class="alignlabel">Clave</td>
                                 <td class="alignlabel">Empleado</td>
                             </tr>
-                            <tr>
-                                <td colspan="2" class="alignlabel"></td>
-                                <asp:Button ID="btnConfirmar" runat="server" OnClick="btnConfirmar_click" OnClientClick="0penPopWorking(true);" ValidationGroup="Confirmar" Text="Confirmar" CssClass="btn-primary" />
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </td>

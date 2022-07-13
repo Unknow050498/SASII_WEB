@@ -11,7 +11,7 @@
 						 <td><asp:TextBox id="textBox1" runat="server" MaxLength="10"  CssClass="form-control"></asp:TextBox></td>				 
 					</tr><tr>
 						<td class="alignlabel">Correo:</td>
-						 <td><asp:TextBox id="textBox2" runat="server" MaxLength="10"  CssClass="form-control"></asp:TextBox></td>
+						 <td><asp:TextBox id="textBox2" runat="server" CssClass="form-control"></asp:TextBox></td>
 					</tr><tr>
 						<td class="alignlabel">Telefono:</td>
 						 <td><asp:TextBox id="textBox3" runat="server" MaxLength="10"  CssClass="form-control"></asp:TextBox></td>

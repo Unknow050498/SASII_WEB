@@ -19,7 +19,7 @@ namespace MVP_ASP
         }
         protected override Response EjecutaProceso()
         {
-            Response response = new Response();
+            return null;
         }
     }
 }
