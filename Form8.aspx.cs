@@ -11,6 +11,8 @@ namespace MVP_ASP
 {
     public partial class Form8 : Vista
     {
+        Response response = new Response();
+
         protected override void InicializaControles()
         {
             textBox1.Text = "";
@@ -18,8 +20,11 @@ namespace MVP_ASP
 
         protected override Response EjecutaProceso()
         {
+            return null;
+        }
 
-            Response response = new Response();
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
             string conAdminTxt = "", conAdminTxtBox;
             using (MySqlConnection conex = new MySqlConnection(ConfigurationManager.ConnectionStrings["Sedlaxar"].ConnectionString))
 
@@ -45,7 +50,8 @@ namespace MVP_ASP
             if (conAdminTxt == conAdminTxtBox)
             {
                 //RFD Redirect Form 9
-                Utilerias.RegisterStartupScriptAlert(Page, "Mandar flujo alta_adm");
+                Form9 form9 = new Form9();
+                Utilerias.RegisterStartupScriptAlert(form9, "Mandar flujo alta_adm");
                 //Response.Redirect(WebConfigurationManager.AppSettings["pageAltaAdm"]);
                 response.msg = "OK";
             }
@@ -54,7 +60,7 @@ namespace MVP_ASP
                 //MessageBox.Show("Contraseña incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 response.msgErr = "Contraseña incorrecta.";
             }
-            return response;
+
         }
     }
 }

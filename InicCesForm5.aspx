@@ -8,14 +8,14 @@
 					<td colspan="2" class="title">Iniciar Sesion</td>
 				 </tr><tr>
 					<td class="alignlabel">Ingresar contraseña:</td>
-					 <td><asp:TextBox id="textBox1" runat="server" MaxLength="10"  CssClass="form-control" Width="77px"></asp:TextBox></td>				 
+					 <td><asp:TextBox id="textBox1" TextMode="Password" runat="server" MaxLength="10"  CssClass="form-control" Width="77px"></asp:TextBox></td>				 
 				</tr><tr>
 					<td colspan="2"class="alignlabel">
 						<asp:Button ID="btnAceptar" runat="server"  OnClick="btnAceptar_Click"  OnClientClick="OpenPopUpWorking(true);" ValidationGroup="aceptar" Text="Iniciar Sesion" CssClass="btn btn-primary" />
 				</tr><tr>
 					<td colspan="2"class="alignlabel">	
 					<asp:LinkButton ID="LinkResPsswd" runat="server" OnClick="LinkResPsswd_Click">Restablecer Contraseña</asp:LinkButton>
-					<asp:LinkButton ID="LinkForgPsswd" runat="server">Olvidaste Contraseña</asp:LinkButton>
+					<asp:LinkButton ID="LinkForgPsswd" runat="server" OnClick="LinkForgPsswd_Click">Olvidaste Contraseña</asp:LinkButton>
 					</td>
 				</tr> 
 		</tbody></table></td>

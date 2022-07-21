@@ -4,16 +4,19 @@
         <tbody>
             <tr>
                 <td>
-                    <table class="section">
+                    <table border="1" class="section">
                         <tbody>
                             <tr>
-                                <td colspan="2" class="title">Seleccion de Usuario</td>
+                                <th colspan="2" class="title">Seleccion de Usuario</th>
                             </tr>
                             <tr>
-                                <td class="alignlabel">Clave</td>
-                                <td class="alignlabel">Empleado</td>
+                                <th class="alignlabel">Clave</th>
+                                <th class="alignlabel">Empleado</th>
                             </tr>
-                            
+                            <tr>
+                                <td><asp:TextBox ID="textBox1" runat="server" MaxLength="10" CssClass="form-control"></asp:TextBox></td>
+                                <td><asp:TextBox ID="textBox2" runat="server" MaxLength="10" CssClass="form-control"></asp:TextBox></td>
+                            </tr>                            
                         </tbody>
                     </table>
                 </td>

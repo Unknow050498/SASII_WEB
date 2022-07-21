@@ -30,7 +30,7 @@ namespace MVP_ASP
 
         protected override void btnAceptar_Click(object sender, EventArgs e)
         {
-            string connection = "Server=localhost;UserID=root;Database=Sedlaxar;Password=root;";
+            string connection = "Server=localhost;Port=3306;UserID=root;Database=sedlaxar;Password=root;";
 
             if (textBox1.Text != textBox2.Text || (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text)))
             {
