@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\App_Data",
+    "\\Areas",
+    "\\Areas\\HelpPage",
+    "\\Areas\\HelpPage\\App_Start",
+    "\\Models"
   ],
   "PreviewInSolutionExplorer": true
 }

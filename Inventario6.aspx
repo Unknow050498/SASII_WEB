@@ -23,8 +23,7 @@
 						<td class="alignlabel">Proveedor(es)</td>
 					</tr><tr>
 						<td colspan="2"class="alignlabel">
-							<asp:ListView ID="ListView1" runat="server"></asp:ListView>
-						</td>
+							&nbsp;</td>
 					</tr> 
 				</tbody></table></td>
 			</tr>

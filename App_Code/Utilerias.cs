@@ -1,6 +1,6 @@
-﻿using SDLX.DTO;
+﻿using MySql.Data.MySqlClient;
+using SDLX.DTO;
 using System;
-using System.Data.SqlClient;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -105,7 +105,7 @@ namespace SDLX.Utilerias
 
 
 
-        public static void ActivarCreditoTablas(bool activar, string numCredito, string[] tablasAfectadas, SqlTransaction sqlTransaction, SqlConnection sqlConnection)
+        public static void ActivarCreditoTablas(bool activar, string numCredito, string[] tablasAfectadas, MySqlTransaction sqlTransaction, MySqlConnection sqlConnection)
         {
             string sqlExclude;
             foreach (string tabla in tablasAfectadas)
@@ -119,7 +119,7 @@ namespace SDLX.Utilerias
                 {
                     sqlExclude = "";
                 }
-                using (SqlCommand cmd = new SqlCommand(
+                using (MySqlCommand cmd = new MySqlCommand(
                 "UPDATE " + tabla + Environment.NewLine +
                     "SET Activo = @activo " + Environment.NewLine +
                     "WHERE Num_Credito = @numCredito AND Activo <> @activo " + sqlExclude

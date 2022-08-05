@@ -93,12 +93,11 @@ namespace MVP_ASP
                     cmd.Parameters.AddWithValue("@folio", (MySqlDbType)DbType.AnsiString).Value = "A000000";
                     cmd.BeginExecuteNonQuery();
                 }
+                MySqlConnection.ClearAllPools();
             }
      
             adm_button.Enabled = true;
             usr_button.Enabled = true;
-            MySqlConnection.ClearAllPools();
-
         }
 
         protected void usr_button_Click(object sender, ImageClickEventArgs e)

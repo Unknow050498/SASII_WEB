@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 /// <summary>
 /// Summary description for SQLQuery
@@ -17,10 +18,10 @@ namespace SDLX.SQL
         public DTOEmpleado EmpleadoDTO(string cve, bool close = true)
         {
             DTOEmpleado dtoRespuesta = new DTOEmpleado();
-            using (SqlCommand cmd = new SqlCommand("SELECT nombre,puesto,salario FROM vendedores WHERE claveVendedor=@Cve", sqlConnection))
+            using (MySqlCommand cmd = new MySqlCommand("SELECT nombre,puesto,salario FROM vendedores WHERE claveVendedor=@Cve", sqlConnection))
             {
                 cmd.Parameters.AddWithValue("@cve", cve);
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
