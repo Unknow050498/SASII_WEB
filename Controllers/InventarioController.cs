@@ -20,14 +20,14 @@ namespace MVP_ASP.Controllers
         // GET: api/Inventario
         public IQueryable<Inventario> GetInventarios()
         {
-            return db.Inventarios;
+            return db.Inventario;
         }
 
         // GET: api/Inventario/5
         [ResponseType(typeof(Inventario))]
         public async Task<IHttpActionResult> GetInventario(int id)
         {
-            Inventario inventario = await db.Inventarios.FindAsync(id);
+            Inventario inventario = await db.Inventario.FindAsync(id);
             if (inventario == null)
             {
                 return NotFound();
@@ -81,7 +81,7 @@ namespace MVP_ASP.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Inventarios.Add(inventario);
+            db.Inventario.Add(inventario);
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = inventario.Id }, inventario);
@@ -91,13 +91,13 @@ namespace MVP_ASP.Controllers
         [ResponseType(typeof(Inventario))]
         public async Task<IHttpActionResult> DeleteInventario(int id)
         {
-            Inventario inventario = await db.Inventarios.FindAsync(id);
+            Inventario inventario = await db.Inventario.FindAsync(id);
             if (inventario == null)
             {
                 return NotFound();
             }
 
-            db.Inventarios.Remove(inventario);
+            db.Inventario.Remove(inventario);
             await db.SaveChangesAsync();
 
             return Ok(inventario);
@@ -114,7 +114,7 @@ namespace MVP_ASP.Controllers
 
         private bool InventarioExists(int id)
         {
-            return db.Inventarios.Count(e => e.Id == id) > 0;
+            return db.Inventario.Count(e => e.Id == id) > 0;
         }
     }
 }

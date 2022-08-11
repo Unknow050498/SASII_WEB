@@ -5,3 +5,7 @@
 *.i*86
 *.x86_64
 *.hex
+*.cs
+*.congig
+*.dll
+*.pdb

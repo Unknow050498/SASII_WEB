@@ -411,9 +411,15 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ContrasController.cs" />
+    <Compile Include="Controllers\DireccionController.cs" />
+    <Compile Include="Controllers\FoliosController.cs" />
     <Compile Include="Controllers\InventarioController.cs" />
+    <Compile Include="Controllers\Prod_ProvController.cs" />
     <Compile Include="Controllers\ProvedoresController.cs" />
+    <Compile Include="Controllers\ProveedoresController.cs" />
     <Compile Include="Controllers\VendedoresController.cs" />
+    <Compile Include="Controllers\VentasController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -431,14 +437,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202208050001556_Initial.cs" />
-    <Compile Include="Migrations\202208050001556_Initial.designer.cs">
-      <DependentUpon>202208050001556_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202208111432126_Initial.cs" />
+    <Compile Include="Migrations\202208111432126_Initial.designer.cs">
+      <DependentUpon>202208111432126_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Ventas.cs" />
+    <Compile Include="Models\Contras.cs" />
+    <Compile Include="Models\Direccion.cs" />
+    <Compile Include="Models\Folios.cs" />
     <Compile Include="Models\Inventario.cs" />
     <Compile Include="Models\MVP_ASPContext.cs" />
+    <Compile Include="Models\Prod_Prov.cs" />
     <Compile Include="Models\Provedores.cs" />
+    <Compile Include="Models\Proveedores.cs" />
     <Compile Include="Models\Vendedores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -578,8 +590,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202208050001556_Initial.resx">
-      <DependentUpon>202208050001556_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202208111432126_Initial.resx">
+      <DependentUpon>202208111432126_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

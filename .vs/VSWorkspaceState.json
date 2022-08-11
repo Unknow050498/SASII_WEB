@@ -1,11 +1,5 @@
 {
-  "ExpandedNodes": [
-    "",
-    "\\App_Data",
-    "\\Areas",
-    "\\Areas\\HelpPage",
-    "\\Areas\\HelpPage\\App_Start",
-    "\\Models"
-  ],
+  "ExpandedNodes": [],
+  "SelectedNode": "\\MVP_ASP.sln",
   "PreviewInSolutionExplorer": true
 }
