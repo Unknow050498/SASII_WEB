@@ -37,5 +37,7 @@ namespace MVP_ASP.Models
         public System.Data.Entity.DbSet<MVP_ASP.Models.Proveedores> Proveedores { get; set; }
 
         public System.Data.Entity.DbSet<MVP_ASP.Models.Ventas> Ventas { get; set; }
+
+        public System.Data.Entity.DbSet<MVP_ASP.Models.Empleados> Empleados { get; set; }
     }
 }

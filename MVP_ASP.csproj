@@ -413,6 +413,7 @@
     </Compile>
     <Compile Include="Controllers\ContrasController.cs" />
     <Compile Include="Controllers\DireccionController.cs" />
+    <Compile Include="Controllers\EmpleadosController.cs" />
     <Compile Include="Controllers\FoliosController.cs" />
     <Compile Include="Controllers\InventarioController.cs" />
     <Compile Include="Controllers\Prod_ProvController.cs" />
@@ -437,11 +438,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202208111432126_Initial.cs" />
-    <Compile Include="Migrations\202208111432126_Initial.designer.cs">
-      <DependentUpon>202208111432126_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202208221854004_Initial.cs" />
+    <Compile Include="Migrations\202208221854004_Initial.designer.cs">
+      <DependentUpon>202208221854004_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Empleados.cs" />
     <Compile Include="Models\Ventas.cs" />
     <Compile Include="Models\Contras.cs" />
     <Compile Include="Models\Direccion.cs" />
@@ -590,8 +592,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202208111432126_Initial.resx">
-      <DependentUpon>202208111432126_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202208221854004_Initial.resx">
+      <DependentUpon>202208221854004_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

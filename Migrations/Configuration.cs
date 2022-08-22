@@ -23,6 +23,10 @@
                 new Direccion() { DirLocal = "Mexico", Correo = "ejemplo1@gmail.com" },
                 new Direccion() { DirLocal = "Puebla", Correo = "ejemplo2@gmail.com" }
                 );
+            context.Empleados.AddOrUpdate(d => d.Id,
+                new Empleados() { Nombre = "Alberto", Apellido = "Mendez", Telefono = "5515907866", Email = "alb.mend@gmail.com", Rol = "Cargador", Sede = "S/N" },
+                new Empleados() { Nombre = "Alberto", Apellido = "Mendez", Telefono = "5515907866", Email = "alb.mend@gmail.com", Rol = "Cargador", Sede = "S/N" }
+                );
             context.Folios.AddOrUpdate(f => f.Id,
                 new Folios() { Id = 1, noFolio = "1234" },
                 new Folios() { Id = 2, noFolio = "5678" }
